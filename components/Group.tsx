@@ -10,11 +10,18 @@ type GroupProps = {
     diagnosis: string;
     active: boolean;
     time: string;
+    navigate: (args: any) => void;
 }
 
-const Group: FC<GroupProps> = ({ user, diagnosis, active, time }) => {
+const Group: FC<GroupProps> = ({
+    user,
+    diagnosis,
+    active,
+    time,
+    navigate,
+}) => {
     return (
-        <GroupItem>
+        <GroupItem onPress={() => navigate("Patient")}>
             <Avatar
                 source={{ uri: user.avatar }}
             />
